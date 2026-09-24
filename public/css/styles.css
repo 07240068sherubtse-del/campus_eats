@@ -37,6 +37,14 @@ body {
 .site-header .logo {
   font-size: 1.3rem;
   font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .site-header nav a {
@@ -50,6 +58,22 @@ body {
 }
 
 .site-header nav a:hover {
+  background-color: var(--primary-tint);
+  color: var(--primary);
+}
+
+.link-btn {
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.link-btn:hover {
   background-color: var(--primary-tint);
   color: var(--primary);
 }
@@ -310,4 +334,125 @@ main {
   color: var(--text-muted);
   font-weight: 600;
   min-height: 1.5em;
+}
+
+.auth-form {
+  max-width: 380px;
+  margin: 40px auto;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.auth-form h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.auth-form .form-hint {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 24px;
+}
+
+.auth-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-form input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.auth-form button {
+  margin-top: 8px;
+  padding: 12px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), #ff8a5c);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.auth-form p {
+  margin: 16px 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.auth-form p a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.error {
+  background-color: #fdecea;
+  color: #c0392b;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.admin-dashboard, .superadmin-dashboard {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.admin-dashboard table, .superadmin-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 32px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.admin-dashboard th, .admin-dashboard td,
+.superadmin-dashboard th, .superadmin-dashboard td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.admin-dashboard form, .superadmin-dashboard form {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.admin-dashboard input, .superadmin-dashboard input, .superadmin-dashboard select {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+}
+
+.admin-dashboard button, .superadmin-dashboard button {
+  width: fit-content;
+  padding: 10px 22px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
 }
