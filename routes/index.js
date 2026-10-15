@@ -9,6 +9,7 @@ const orderController = require('../controllers/orderController');
 const adminController = require('../controllers/adminController');
 const superAdminController = require('../controllers/superAdminController');
 const { requireAuth, requireAdmin, requireSuperAdmin } = require('../middleware/auth');
+const feedbackController = require('../controllers/feedbackController');
 // Pages
 router.get('/', homeController.getHome);
 router.get('/about', aboutController.getAbout);
@@ -45,3 +46,5 @@ router.post('/superadmin/restaurants/:id/remove', requireSuperAdmin, superAdminC
 router.post('/superadmin/grant-admin', requireSuperAdmin, superAdminController.grantAdmin);
 
 module.exports = router;
+
+router.post('/restaurants/:id/feedback', feedbackController.submitFeedback);

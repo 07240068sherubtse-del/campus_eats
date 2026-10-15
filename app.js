@@ -4,10 +4,14 @@ const session = require('express-session');
 const dotenv = require('dotenv');
 dotenv.config();
 
+const { connectMongo } = require('./config/mongo');
+if (process.env.NODE_ENV !== 'test') {
+  connectMongo().catch(err => console.error('MongoDB connection failed:', err));
+}
+
 
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 // View engine
 app.set('view engine', 'ejs');
@@ -38,7 +42,4 @@ app.use('/', indexRoutes);
 const apiRoutes = require('./routes/api');
 app.use('/api', apiRoutes);
 
-// Start server (last)
-app.listen(PORT, () => {
-  console.log(`Campus Eats running at http://localhost:${PORT}`);
-});
+module.exports = app;
